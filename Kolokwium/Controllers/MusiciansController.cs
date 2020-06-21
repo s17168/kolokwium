@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kolokwium.DTOs.Responses;
 using Kolokwium.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,6 +24,21 @@ namespace Kolokwium.Controllers
         public IActionResult TestSample()
         {
             return Ok("Dziala");
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetMusician(int id)
+        {
+            MusicianResponseDto response = null;
+            try
+            {
+                response = _dbService.GetMusicianInfo(id); ;
+            } catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Ok(response);
         }
 
 
