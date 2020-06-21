@@ -21,12 +21,6 @@ namespace Kolokwium.Controllers
             _dbService = service;
         }
 
-        [HttpGet]
-        public IActionResult TestSample()
-        {
-            return Ok("Dziala");
-        }
-
         [HttpGet("{id}")]
         public IActionResult GetMusician(int id)
         {
