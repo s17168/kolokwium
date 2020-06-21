@@ -16,6 +16,7 @@ namespace Kolokwium.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdAlbum { get; set; }
+        [Required]
         [MaxLength(30)]
         public string AlbumName { get; set; }
         public DateTime PublishDate { get; set; }

@@ -13,9 +13,11 @@ namespace Kolokwium.Models
         {
             Album = new HashSet<Album>();
         }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdMusicLabel { get; set; }
+        [Required]
         [MaxLength(50)]
         public string Name { get; set; }
 

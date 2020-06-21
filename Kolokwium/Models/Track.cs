@@ -16,6 +16,7 @@ namespace Kolokwium.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdTrack { get; set; }
+        [Required]
         [MaxLength(20)]
         public string TrackName { get; set; }
         public float Duration { get; set; }
